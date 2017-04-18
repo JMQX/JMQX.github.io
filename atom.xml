@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-18T09:53:59.501Z</updated>
+  <updated>2017-04-18T14:34:37.200Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello hexo</title>
+    <link href="http://yoursite.com/2017/04/18/hello-hexo/"/>
+    <id>http://yoursite.com/2017/04/18/hello-hexo/</id>
+    <published>2017-04-18T14:20:06.000Z</published>
+    <updated>2017-04-18T14:34:37.200Z</updated>
+    
+    <content type="html"><![CDATA[<p>#Hello Hexo</p>
+<p><img src="https://jmqx.github.io/images/hexo.jpg" alt="head" title="hexo"><br>很久以前就想搭建一个个人技术博客的网站了，但是那时候接触的东西不多，没有听说过hexo、jekyll、wordpress等快速blog生成工具，自己在网上找了博客模板，修改了一下前端代码，用eclipse基于jsp搭建了一个小型博客发布到阿里云，但是时间久了发现自己写的代码不稳定，经常获取不到数据库数据，于是放弃了做个人博客网站的想法。</p>
+<p>后来听说了hexo，但是一直没有定下心去看官方文档，于是搭博客网站的想法再一次不了了之。今晚闲暇，实在不知道该干什么，于是捡起了搭博客的想法，入门了hexo搭建github博客，现在记录下来，也算是作个念象，给想要搭建个人博客网站的小伙伴们一个参考。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#Hello Hexo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://jmqx.github.io/images/hexo.jpg&quot; alt=&quot;head&quot; title=&quot;hexo&quot;&gt;&lt;br&gt;很久以前就想搭建一个个人技术博客的网站了，但是那时候接触的东西不多，没有听说过h
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
