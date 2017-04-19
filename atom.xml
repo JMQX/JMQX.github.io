@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-19T14:44:31.194Z</updated>
+  <updated>2017-04-19T14:54:25.626Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/04/19/%E5%85%A5%E6%89%8BGitHub-Hexo%E5%8D%9A%E5%AE%A2%E5%BF%85%E5%A4%87-MarkDown%E8%AF%AD%E6%B3%95/"/>
     <id>http://yoursite.com/2017/04/19/入手GitHub-Hexo博客必备-MarkDown语法/</id>
     <published>2017-04-19T14:06:06.000Z</published>
-    <updated>2017-04-19T14:44:31.194Z</updated>
+    <updated>2017-04-19T14:54:25.626Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://jmqx.github.io/img/markDown.jpg" alt="MarkDown"></p>
 <ol>
@@ -37,16 +37,31 @@
 <li><p>有序列表<br>使用数字后面跟上句号。（还要有空格）</p>
 </li>
 <li><p>链接（Links）<br>Markdown中有两种方式，实现链接，分别为内联方式和引用方式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">内联方式：This is an [example link](http://example.com/).</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">内联方式：This is an [example link](http://example.com/).</div><div class="line"></div><div class="line">引用方式：</div><div class="line">I get 10 times more traffic from [Google][1] than from [Yahoo][2] or [MSN][3].</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>引用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I get 10 times more traffic from [Google][1] than from [Yahoo][2] or [MSN][3].</div><div class="line">```</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"></div><div class="line">8. 图片（Images）</div><div class="line">图片的处理方式和链接的处理方式，非常的类似。</div><div class="line">内联方式：</div></pre></td></tr></table></figure>
-<p><img src="/path/to/img.jpg" alt="alt text" title="Title"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">引用方式：</div></pre></td></tr></table></figure></p>
-<p><img src="/path/to/img.jpg" alt="alt text" title="Title"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">9. 代码（HTML中所谓的Code）</div><div class="line">实现方式有两种：</div><div class="line">第一种：简单文字出现一个代码框。使用`&lt;blockquote&gt;`。（`不是单引号而是左上角的ESC下面~中的`）</div><div class="line">第二种：大片文字需要实现代码框。使用Tab和四个空格。</div><div class="line"></div><div class="line">10. 脚注（footnote）</div><div class="line">实现方式如下：</div></pre></td></tr></table></figure>
-<p>hello<a href="hi">^hello</a></p>
-<p>```</p>
+<blockquote>
+<p>[1]: <a href="http://google.com/" target="_blank" rel="external">http://google.com/</a>        “Google” </p>
+<p>[2]: <a href="http://search.yahoo.com/" target="_blank" rel="external">http://search.yahoo.com/</a>  “Yahoo Search” </p>
+<p>[3]: <a href="http://search.msn.com/" target="_blank" rel="external">http://search.msn.com/</a>    “MSN Search”</p>
+</blockquote>
+<ol>
+<li>图片（Images）<br>图片的处理方式和链接的处理方式，非常的类似。<blockquote>
+<p>内联方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![alt text](/path/to/img.jpg &quot;Title&quot;)</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>引用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![alt text][id]</div><div class="line">[id]: /path/to/img.jpg &quot;Title&quot;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ol>
+<li><p>代码（HTML中所谓的Code）<br>实现方式有两种：<br>第一种：简单文字出现一个代码框。使用<code>&lt;blockquote&gt;</code>。（<code>不是单引号而是左上角的ESC下面~中的</code>）<br>第二种：大片文字需要实现代码框。使用Tab和四个空格。</p>
+</li>
+<li><p>脚注（footnote）<br>实现方式如下：<br>hello[^hello]</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[^hello]: hi</div></pre></td></tr></table></figure>
 <ol>
 <li>下划线<br>在空白行下方添加三条“-”横线。（前面讲过在文字下方添加“-”，实现的2级标题）</li>
 </ol>
