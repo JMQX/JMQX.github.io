@@ -177,27 +177,10 @@
 <li>支持NodeJs</li>
 <li>拦截请求和响应</li>
 <li>自动转换JSON数据</li>
-<li>客户端支持保护安全免受 XSRF 攻击</li>
-</ul>
-<h2 id="安装-没有安装npm的可以直接安装nodejs，自带npm"><a href="#安装-没有安装npm的可以直接安装nodejs，自带npm" class="headerlink" title="安装(没有安装npm的可以直接安装nodejs，自带npm)"></a>安装(没有安装npm的可以直接安装nodejs，自带npm)</h2><h6 id="安装到当前项目下："><a href="#安装到当前项目下：" class="headerlink" title="安装到当前项目下："></a>安装到当前项目下：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save axios vue-axios</div></pre></td></tr></table></figure>
-<h6 id="或全局安装："><a href="#或全局安装：" class="headerlink" title="或全局安装："></a>或全局安装：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g axios vue-axios</div></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import axios from &apos;axios&apos;</div><div class="line">import VueAxios from &apos;vue-axios&apos;</div><div class="line">Vue.use(VueAxios,axios)</div></pre></td></tr></table></figure>
-<p>##例子</p>
-<h6 id="发送get请求"><a href="#发送get请求" class="headerlink" title="发送get请求"></a>发送get请求</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">axios.get(&apos;/user?ID=12345&apos;)</div><div class="line">  .then(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;);</div><div class="line">  //上下代码等同</div><div class="line">axios.get(&apos;/user&apos;, &#123;</div><div class="line">    params: &#123;</div><div class="line">      ID: 12345</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .then(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h6 id="发送post请求"><a href="#发送post请求" class="headerlink" title="发送post请求"></a>发送post请求</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">axios.post(&apos;/user&apos;, &#123;</div><div class="line">    firstName: &apos;Fred&apos;,</div><div class="line">    lastName: &apos;Flintstone&apos;</div><div class="line">  &#125;)</div><div class="line">  .then(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h6 id="发送多个并发请求"><a href="#发送多个并发请求" class="headerlink" title="发送多个并发请求"></a>发送多个并发请求</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  function getUserAccount() &#123;</div><div class="line">  return axios.get(&apos;/user/12345&apos;);</div><div class="line">&#125;</div><div class="line">function getUserPermissions() &#123;</div><div class="line">  return axios.get(&apos;/user/12345/permissions&apos;);</div><div class="line">&#125;</div><div class="line">axios.all([getUserAccount(), getUserPermissions()])</div><div class="line">  .then(axios.spread(function (acct, perms) &#123;</div><div class="line">    // Both requests are now complete</div><div class="line">  &#125;));</div></pre></td></tr></table></figure>
-<h6 id="可以通过给axios传递参数来制定请求"><a href="#可以通过给axios传递参数来制定请求" class="headerlink" title="可以通过给axios传递参数来制定请求"></a>可以通过给axios传递参数来制定请求</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">axios(&#123;</div><div class="line">  method: &apos;post&apos;,</div><div class="line">  url: &apos;/user/12345&apos;,</div><div class="line">  data: &#123;</div><div class="line">    firstName: &apos;Fred&apos;,</div><div class="line">    lastName: &apos;Flintstone&apos;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h6 id="在Vue中使用"><a href="#在Vue中使用" class="headerlink" title="在Vue中使用"></a>在Vue中使用</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Vue.axios.get(api).then((response) =&gt; &#123;</div><div class="line">  console.log(response.data)</div><div class="line">&#125;)</div><div class="line">this.axios.get(api).then((response) =&gt; &#123;</div><div class="line">  console.log(response.data)</div><div class="line">&#125;)</div><div class="line">this.$http.get(api).then((response) =&gt; &#123;</div><div class="line">  console.log(response.data)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="设置axios全局默认值"><a href="#设置axios全局默认值" class="headerlink" title="设置axios全局默认值"></a>设置axios全局默认值</h3><p>您可以指定将应用于每个请求的配置默认值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">axios.defaults.baseURL = &apos;https:/*api.example.com&apos;;</div><div class="line">axios.defaults.headers.common[&apos;Authorization&apos;] = AUTH_TOKEN;</div><div class="line">axios.defaults.headers.post[&apos;Content-Type&apos;] = &apos;application/x-www-form-urlencoded&apos;;</div></pre></td></tr></table></figure>
-<h3 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h3><p>你可以截取请求或响应在被 then 或者 catch 处理之前</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/*添加请求拦截器*/</div><div class="line">axios.interceptors.request.use(function(config)&#123;</div><div class="line">     /*在发送请求之前做某事*/</div><div class="line">     return config;</div><div class="line">   &#125;，function(error)&#123;</div><div class="line">     /*请求错误时做些事*/</div><div class="line">     return Promise.reject(error);</div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/*添加响应拦截器*/</div><div class="line">axios.interceptors.response.use(function(response)&#123;</div><div class="line">     /*对响应数据做些事*/</div><div class="line">      return response;</div><div class="line">   &#125;，function(error)&#123;</div><div class="line">     /*请求错误时做些事*/</div><div class="line">     return Promise.reject(error);</div><div class="line">   &#125;);</div><div class="line">```  </div><div class="line">如果你以后可能需要删除拦截器。</div></pre></td></tr></table></figure>
-<p>var myInterceptor = axios.interceptors.request.use(function(){/<em>…</em>/});<br>axios.interceptors.request.eject(myInterceptor);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">### 取消请求</div><div class="line">您可以使用取消令牌取消请求。</div><div class="line">您可以使用CancelToken.source工厂创建一个取消令牌，如下所示：</div></pre></td></tr></table></figure></p>
-<p>var CancelToken = axios.CancelToken;<br>var source = CancelToken.source();<br>axios.get(‘/user/12345’, {<br>  cancelToken: source.token<br>}).catch(function(thrown){<br>  if (axios.isCancel(thrown)) {<br>    console.log(‘Request canceled’, thrown.message);<br>  } else {<br>    /<em> 处理错误</em>/<br>  }<br>});<br>/<em>取消请求(消息参数是可选的)</em>/<br>source.cancel(‘操作被用户取消。’);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">您还可以通过将执行器函数传递给CancelToken构造函数来创建取消令牌：</div></pre></td></tr></table></figure></p>
-<p>var CancelToken = axios.CancelToken;<br>var cancel;<br>axios.get(‘/ user / 12345’，{<br>   cancelToken：new CancelToken(functionexecutor(c){<br>     /<em>一个执行器函数接收一个取消函数作为参数</em>/<br>     cancel = c;<br>   })<br>});<br>/<em> 取消请求</em>/<br>clear();<br>```<br>注意：您可以使用相同的取消令牌取消几个请求。</p>
-<p>axios在很大程度上受到Angular提供的$http服务的启发。 最终，axios努力提供一个在Angular外使用的独立的$http-like服务。</p>
-
+<li>客户端支持保护安全免受 XSRF 攻击
+        
+          <a class="article-more-a" href="/2017/04/22/Axios-JS-HTTP库-Ajax库-基本用法/#more">more >></a>
+        
       
 
       
@@ -260,48 +243,10 @@
       
         <p><img src="https://jmqx.github.io/img/markDown.jpg" alt="MarkDown"></p>
 <ol>
-<li><p>标题设置（让字体变大，和word的标题意思一样）<br>在Markdown当中设置标题，有两种方式：<br>第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。<br>第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）</p>
-</li>
-<li><p>块注释（blockquote）<br>通过在文字开头添加“&gt;”表示块注释。（当&gt;和文字之间添加五个blank时，块注释的文字会有变化。）</p>
-</li>
-<li><p>斜体<br>将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来</p>
-</li>
-<li><p>粗体<br>将需要设置为斜体的文字两端使用2个“*”或者“_”夹起来</p>
-</li>
-<li><p>无序列表<br>在文字开头添加(<em>, +, and -)实现无序列表。但是要注意在(</em>, +, and -)和文字之间需要添加空格。（建议：一个文档中只是用一种无序列表的表示方式）</p>
-</li>
-<li><p>有序列表<br>使用数字后面跟上句号。（还要有空格）</p>
-</li>
-<li><p>链接（Links）<br>Markdown中有两种方式，实现链接，分别为内联方式和引用方式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">内联方式：This is an [example link](http://example.com/).</div><div class="line"></div><div class="line">引用方式：</div><div class="line">I get 10 times more traffic from [Google][1] than from [Yahoo][2] or [MSN][3].</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>[1]: <a href="http://google.com/" target="_blank" rel="external">http://google.com/</a>        “Google” </p>
-<p>[2]: <a href="http://search.yahoo.com/" target="_blank" rel="external">http://search.yahoo.com/</a>  “Yahoo Search” </p>
-<p>[3]: <a href="http://search.msn.com/" target="_blank" rel="external">http://search.msn.com/</a>    “MSN Search”</p>
-</blockquote>
-<ol>
-<li>图片（Images）<br>图片的处理方式和链接的处理方式，非常的类似。<blockquote>
-<p>内联方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![alt text](/path/to/img.jpg &quot;Title&quot;)</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>引用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![alt text][id]</div><div class="line">[id]: /path/to/img.jpg &quot;Title&quot;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ol>
-<li><p>代码（HTML中所谓的Code）<br>实现方式有两种：<br>第一种：简单文字出现一个代码框。使用<code>&lt;blockquote&gt;</code>。（<code>不是单引号而是左上角的ESC下面~中的</code>）<br>第二种：大片文字需要实现代码框。使用Tab和四个空格。</p>
-</li>
-<li><p>脚注（footnote）<br>实现方式如下：<br>hello[^hello]</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[^hello]: hi</div></pre></td></tr></table></figure>
-<ol>
-<li>下划线<br>在空白行下方添加三条“-”横线。（前面讲过在文字下方添加“-”，实现的2级标题）</li>
-</ol>
-
+<li><p>标题设置（让字体变大，和word的标题意思一样）<br>在Markdown当中设置标题，有两种方式：<br>第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。<br>第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）
+        
+          <a class="article-more-a" href="/2017/04/19/入手GitHub-Hexo博客必备-MarkDown语法/#more">more >></a>
+        
       
 
       
@@ -415,16 +360,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a><br>
+        
+          <a class="article-more-a" href="/2017/04/18/hello-world/#more">more >></a>
+        
       
 
       
