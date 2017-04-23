@@ -6,14 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>江民钦的博客</title>
+  <title>about | 江民钦的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="江民钦的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="江民钦的博客">
+<meta property="og:updated_time" content="2017-04-23T03:22:09.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="江民钦的博客">
+<meta name="twitter:title" content="about">
   
     <link rel="alternative" href="/atom.xml" title="江民钦的博客" type="application/atom+xml">
   
@@ -143,315 +144,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-算法学习笔记-DP动态规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/23/算法学习笔记-DP动态规划/">算法学习笔记-DP动态规划</a>
+    <h1 class="article-title" itemprop="name">
+      about
     </h1>
   
 
         
-        <a href="/2017/04/23/算法学习笔记-DP动态规划/" class="archive-article-date">
-  	<time datetime="2017-04-23T13:12:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
+        <a href="/about/index.html" class="archive-article-date">
+  	<time datetime="2017-04-23T03:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><blockquote>
-<p>动态规划相信大家都知道，动态规划算法也是新手在刚接触算法设计时很苦恼的问题，有时候觉得难以理解，但是真正理解之后，就会觉得动态规划其实并没有想象中那么难。网上也有很多关于讲解动态规划的文章，大多都是叙述概念，讲解原理，让人觉得晦涩难懂，即使一时间看懂了，发现当自己做题的时候又会觉得无所适从。我觉得，理解算法最重要的还是在于练习，只有通过自己练习，才可以更快地提升。话不多说，接下来，下面我就通过一个例子来一步一步讲解动态规划是怎样使用的，只有知道怎样使用，才能更好地理解，而不是一味地对概念和原理进行反复琢磨。</p>
-</blockquote>
-<h4 id="首先，我们来看一道题"><a href="#首先，我们来看一道题" class="headerlink" title="首先，我们来看一道题:"></a>首先，我们来看一道题:</h4><h6 id="数值三角形"><a href="#数值三角形" class="headerlink" title="数值三角形"></a>数值三角形</h6><blockquote>
-<p>  7<br>   3 8<br>  8 1 0<br> 2 7 4 4<br>4 5 2 6 5</p>
-</blockquote>
-<p>在上面的数字三角形中寻找一条从顶部到底边的路径，使得路径上所经过的数字之和最大。路径上的每一步都只能往左下或 右下走。只需要求出这个最大和即可，不必给出具体路径。 三角形的行数大于1小于等于100，数字为 0 - 99</p>
-<p>输入格式：</p>
-<pre><code>5      //表示三角形的行数    接下来输入三角形
-
-7
-
-3   8
-
-8   1   0
-
-2   7   4   4
-
-4   5   2   6   5
-
-要求输出最大和
-</code></pre><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;cmath&gt;</div><div class="line">using namespace std;</div><div class="line">int main()&#123;</div><div class="line">	int n;</div><div class="line">	cin&gt;&gt;n;</div><div class="line">	int num[n][n];</div><div class="line">	for(int i=0;i&lt;n;i++)&#123;</div><div class="line">		for(int j=0;j&lt;i+1;j++)&#123;</div><div class="line">			cin&gt;&gt;num[i][j];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	for(int i=n-2;i&gt;=0;i--)&#123;</div><div class="line">		for(int j=0;j&lt;i+1;j++)&#123;</div><div class="line">			num[i][j]+=max(num[i+1][j],num[i+1][j+1]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	cout&lt;&lt;num[0][0];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h6 id="总结，能用动规解决的问题的特点"><a href="#总结，能用动规解决的问题的特点" class="headerlink" title="总结，能用动规解决的问题的特点"></a>总结，能用动规解决的问题的特点</h6><ul>
-<li>问题具有最优子结构性质。如果问题的最优解所包含的 子问题的解也是最优的，我们就称该问题具有最优子结 构性质。</li>
-<li>无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-动态规划 -DP -算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/23/算法学习笔记-DP动态规划/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Axios-JS-HTTP库-Ajax库-基本用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/22/Axios-JS-HTTP库-Ajax库-基本用法/">Axios(JS HTTP库/Ajax库)基本用法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/22/Axios-JS-HTTP库-Ajax库-基本用法/" class="archive-article-date">
-  	<time datetime="2017-04-22T12:48:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Axios-JS"><a href="#Axios-JS" class="headerlink" title="Axios-JS"></a>Axios-JS</h1><h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><p>vue更新到2.0之后，作者就不再对vue-resource更新了，而是推荐使用Axios。Axios的特征是：</p>
-<ul>
-<li>在浏览器中发送 XMLHttpRequests 请求</li>
-<li>比Jquery轻量，但处理请求不多时，可以使用</li>
-<li>基于Promise语法标准</li>
-<li>支持NodeJs</li>
-<li>拦截请求和响应</li>
-<li>自动转换JSON数据</li>
-<li>客户端支持保护安全免受 XSRF 攻击
-        
-          <a class="article-more-a" href="/2017/04/22/Axios-JS-HTTP库-Ajax库-基本用法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">axios,vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/22/Axios-JS-HTTP库-Ajax库-基本用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-入手GitHub-Hexo博客必备-MarkDown语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/19/入手GitHub-Hexo博客必备-MarkDown语法/">入手GitHub+Hexo博客必备:MarkDown语法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/19/入手GitHub-Hexo博客必备-MarkDown语法/" class="archive-article-date">
-  	<time datetime="2017-04-19T14:06:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://jmqx.github.io/img/markDown.jpg" alt="MarkDown"></p>
-<ol>
-<li><p>标题设置（让字体变大，和word的标题意思一样）<br>在Markdown当中设置标题，有两种方式：<br>第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。<br>第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）
-        
-          <a class="article-more-a" href="/2017/04/19/入手GitHub-Hexo博客必备-MarkDown语法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MarkDown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/19/入手GitHub-Hexo博客必备-MarkDown语法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/18/hello-hexo/">hello hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/18/hello-hexo/" class="archive-article-date">
-  	<time datetime="2017-04-18T14:20:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#Hello Hexo</p>
-<p><img src="https://jmqx.github.io/images/hexo.jpg" alt="head" title="hexo"><br>很久以前就想搭建一个个人技术博客的网站了，但是那时候接触的东西不多，没有听说过hexo、jekyll、wordpress等快速blog生成工具，自己在网上找了博客模板，修改了一下前端代码，用eclipse基于jsp搭建了一个小型博客发布到阿里云，但是时间久了发现自己写的代码不稳定，经常获取不到数据库数据，于是放弃了做个人博客网站的想法。</p>
-<p>后来听说了hexo，但是一直没有定下心去看官方文档，于是搭博客网站的想法再一次不了了之。今晚闲暇，实在不知道该干什么，于是捡起了搭博客的想法，入门了hexo搭建github博客，现在记录下来，也算是作个念象，给想要搭建个人博客网站的小伙伴们一个参考。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/18/hello-hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/18/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-18T09:53:59.501Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a><br>
-        
-          <a class="article-more-a" href="/2017/04/18/hello-world/#more">more >></a>
         
       
 
@@ -463,26 +175,93 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/18/hello-world/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/about/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
+  
 
 
 
 
 
   
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="undefined" data-title="about" data-url="http://yoursite.com/about/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
+
+
 
 
           </div>
@@ -504,7 +283,7 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
