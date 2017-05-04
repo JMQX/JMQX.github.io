@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>算法学习笔记-妖怪与和尚过河问题 | 江民钦的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="妖怪与和尚过河问题 有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？这是一个很有意思的智力题，但是并不难，每次可以选择一个人或者两个人过河，只要保证河的任何一边的和尚数量总是大于或等于妖怪的数量即可。这里先给出一种过河方法：  两个妖怪先过河">
+  <meta name="description" content="妖怪与和尚过河问题 有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？">
 <meta name="keywords" content="-算法 -状态树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法学习笔记-妖怪与和尚过河问题">
 <meta property="og:url" content="http://yoursite.com/2017/05/04/算法学习笔记-和尚过河问题/index.html">
 <meta property="og:site_name" content="江民钦的博客">
-<meta property="og:description" content="妖怪与和尚过河问题 有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？这是一个很有意思的智力题，但是并不难，每次可以选择一个人或者两个人过河，只要保证河的任何一边的和尚数量总是大于或等于妖怪的数量即可。这里先给出一种过河方法：  两个妖怪先过河">
-<meta property="og:updated_time" content="2017-05-04T14:45:30.374Z">
+<meta property="og:description" content="妖怪与和尚过河问题 有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？">
+<meta property="og:updated_time" content="2017-05-04T14:46:58.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法学习笔记-妖怪与和尚过河问题">
-<meta name="twitter:description" content="妖怪与和尚过河问题 有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？这是一个很有意思的智力题，但是并不难，每次可以选择一个人或者两个人过河，只要保证河的任何一边的和尚数量总是大于或等于妖怪的数量即可。这里先给出一种过河方法：  两个妖怪先过河">
+<meta name="twitter:description" content="妖怪与和尚过河问题 有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？">
   
     <link rel="alternative" href="/atom.xml" title="江民钦的博客" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="妖怪与和尚过河问题"><a href="#妖怪与和尚过河问题" class="headerlink" title="妖怪与和尚过河问题"></a>妖怪与和尚过河问题</h1><blockquote>
-<p>有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？<br>这是一个很有意思的智力题，但是并不难，每次可以选择一个人或者两个人过河，只要保证河的任何一边的和尚数量总是大于或等于妖怪的数量即可。这里先给出一种过河方法：</p>
+<p>有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？<br><a id="more"></a><br>这是一个很有意思的智力题，但是并不难，每次可以选择一个人或者两个人过河，只要保证河的任何一边的和尚数量总是大于或等于妖怪的数量即可。这里先给出一种过河方法：</p>
 </blockquote>
 <p>两个妖怪先过河，一个妖怪回来；</p>
 <p>再两个妖怪过河，一个妖怪回来；</p>
@@ -265,20 +265,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/23/css3动画库animate-css的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/04/算法学习笔记-妖怪与和尚过河问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          css3动画库animate.css的使用
+          算法学习笔记-妖怪与和尚过河问题
         
       </div>
     </a>
   
-  
-    <a href="/2017/05/04/算法学习笔记-妖怪与和尚过河问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">算法学习笔记-妖怪与和尚过河问题</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -419,15 +414,27 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-算法 -状态树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MarkDown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">animate.css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">css3动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-算法 -状态树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -440,18 +447,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">animate.css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">css3动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MarkDown</a>
               </li>
             
             <div class="clearfix"></div>
