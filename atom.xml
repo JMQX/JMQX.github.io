@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-04T14:33:19.511Z</updated>
+  <updated>2017-05-04T14:49:57.029Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,29 +20,7 @@
     <link href="http://yoursite.com/2017/05/04/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A6%96%E6%80%AA%E4%B8%8E%E5%92%8C%E5%B0%9A%E8%BF%87%E6%B2%B3%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2017/05/04/算法学习笔记-妖怪与和尚过河问题/</id>
     <published>2017-05-04T14:21:31.000Z</published>
-    <updated>2017-05-04T14:33:19.511Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="过河问题"><a href="#过河问题" class="headerlink" title="过河问题"></a>过河问题</h1><p>&gt;</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;过河问题&quot;&gt;&lt;a href=&quot;#过河问题&quot; class=&quot;headerlink&quot; title=&quot;过河问题&quot;&gt;&lt;/a&gt;过河问题&lt;/h1&gt;&lt;p&gt;&amp;gt;&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="-算法 -状态树" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95-%E7%8A%B6%E6%80%81%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法学习笔记-妖怪与和尚过河问题</title>
-    <link href="http://yoursite.com/2017/05/04/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%92%8C%E5%B0%9A%E8%BF%87%E6%B2%B3%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/05/04/算法学习笔记-和尚过河问题/</id>
-    <published>2017-05-04T14:21:31.000Z</published>
-    <updated>2017-05-04T14:46:58.121Z</updated>
+    <updated>2017-05-04T14:49:57.029Z</updated>
     
     <content type="html"><![CDATA[<h1 id="妖怪与和尚过河问题"><a href="#妖怪与和尚过河问题" class="headerlink" title="妖怪与和尚过河问题"></a>妖怪与和尚过河问题</h1><blockquote>
 <p>有三个和尚（或传教士）和三个妖怪（或食人怪）过河，只有一条能装下两个人（和尚或妖怪）的船，在河的任何一方或者船上，如果妖怪的人数大于和尚的人数，那么和尚就会有被吃掉的危险。你能不能找出一种安全的渡河方法呢？<br><a id="more"></a><br>这是一个很有意思的智力题，但是并不难，每次可以选择一个人或者两个人过河，只要保证河的任何一边的和尚数量总是大于或等于妖怪的数量即可。这里先给出一种过河方法：</p>
