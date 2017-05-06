@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JS中DOM操作、事件绑定、监听、委托详解 | 江民钦的博客</title>
+  <title>JS中DOM操作、事件绑定、监听、委托及event对象详解 | 江民钦的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。 DOM操作1.访问节点document.getElementById(id);返回对拥有指定id的第一个对象进行访问 document.getElementsByName(name);">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS中DOM操作、事件绑定、监听、委托详解">
-<meta property="og:url" content="http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/index.html">
+<meta property="og:title" content="JS中DOM操作、事件绑定、监听、委托及event对象详解">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托及event对象详解/index.html">
 <meta property="og:site_name" content="江民钦的博客">
 <meta property="og:description" content="在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。 DOM操作1.访问节点document.getElementById(id);返回对拥有指定id的第一个对象进行访问 document.getElementsByName(name);">
-<meta property="og:updated_time" content="2017-05-06T12:32:46.425Z">
+<meta property="og:updated_time" content="2017-05-06T13:02:06.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS中DOM操作、事件绑定、监听、委托详解">
+<meta name="twitter:title" content="JS中DOM操作、事件绑定、监听、委托及event对象详解">
 <meta name="twitter:description" content="在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。 DOM操作1.访问节点document.getElementById(id);返回对拥有指定id的第一个对象进行访问 document.getElementsByName(name);">
   
     <link rel="alternative" href="/atom.xml" title="江民钦的博客" type="application/atom+xml">
@@ -148,19 +148,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JS中DOM操作、事件绑定、监听、委托详解" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS中DOM操作、事件绑定、监听、委托及event对象详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JS中DOM操作、事件绑定、监听、委托详解
+      JS中DOM操作、事件绑定、监听、委托及event对象详解
     </h1>
   
 
         
-        <a href="/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/" class="archive-article-date">
+        <a href="/2017/05/06/JS中DOM操作、事件绑定、监听、委托及event对象详解/" class="archive-article-date">
   	<time datetime="2017-05-06T10:57:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-06</time>
 </a>
         
@@ -210,7 +210,7 @@
 <p>element.attachEvent(event, function)</p>
 <p>event：（必需）事件类型。需加“on“，例如：onclick。</p>
 <p>function：（必需）指定要事件触发时执行的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.getElementById(&apos;btn&apos;).addEventListener(&quot;click&quot;, btnClick, false);</div><div class="line">function btnClick()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h3><p>element.removeEventListener(event,function);</p>
+<h3 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h3><p>element.removeEventListener(event,function);<br>IE下：element.detachEvent(event,function);</p>
 <h3 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h3><pre><code>但值得注意的是JavaScript中事件模型分为两种————冒泡模型和捕获模型，也称事件冒泡和事件捕获。
 （1）事件冒泡：指事件按照从最特定的事件目标到最不特定的事件目标的顺序触发。通俗一点，在html文档中，DOM节点成呈树状结构，从最特点的事件目标即直接发生的DOM节点到最不特点发生的事件目标即html的document对象传递，这个过程称为事件冒泡。
 （2）事件捕获：事件从最不精确的document对象开始触发，到最特定最精确的事件目标。简而言之，就是和事件冒泡完全相反的两个动作。
@@ -221,6 +221,34 @@
 <p>传统写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var items=document.getElementsByTagName(&apos;li&apos;);</div><div class="line">    for(var i=0;i&lt;items.length;i++)&#123;</div><div class="line">        items[i].onclick=function()&#123;</div><div class="line">            this.style.color=&apos;red&apos;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>事件委托写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var group=document.getElementById(&apos;group&apos;);</div><div class="line">    group.onclick=function(event)&#123;</div><div class="line">        var target=event.target;</div><div class="line">        target.style.color=&apos;red&apos;;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>当然函数阻止事件冒泡可以使用event.stopPropagation().<br>还有阻止事件的默认行为的方法有event.preventDefault()</p>
+<h2 id="Event对象"><a href="#Event对象" class="headerlink" title="Event对象"></a>Event对象</h2><ol>
+<li><p>type：事件的类型，如onlick中的click；</p>
+</li>
+<li><p>srcElement/target：事件源，就是发生事件的元素；</p>
+</li>
+<li><p>button：声明被按下的鼠标键，整数，1代表左键，2代表右键，4代表中键，如果按下多个键，酒把这些值加起来，所以3就代表左右键同时按下；（firefox中 0代表左键，1代表中间键，2代表右键）</p>
+</li>
+<li><p>clientX/clientY：事件发生的时候，鼠标相对于浏览器窗口可视文档区域的左上角的位置；(在DOM标准中，这两个属性值都不考虑文档的滚动情况，也就是说，无论文档滚动到哪里，只要事件发生在窗口左上角，clientX和clientY都是 0，所以在IE中，要想得到事件发生的坐标相对于文档开头的位置，要加上<br>document.body.scrollLeft和 document.body.scrollTop)</p>
+</li>
+<li><p>offsetX,offsetY/layerX,layerY：事件发生的时候，鼠标相对于源元素左上角的位置；</p>
+</li>
+<li><p>x,y/pageX,pageY：检索相对于父要素鼠标水平坐标的整数；</p>
+</li>
+<li><p>altKey,ctrlKey,shiftKey等：返回一个布尔值；</p>
+</li>
+<li><p>keyCode：返回keydown何keyup事件发生的时候按键的代码，以及keypress 事件的Unicode字符；(firefox2不支持 event.keycode，可以用 event.which替代 )</p>
+</li>
+<li><p>fromElement,toElement：前者是指代mouseover事件中鼠标移动过的文档元素，后者指代mouseout事件中鼠标移动到的文档元素；</p>
+</li>
+<li><p>cancelBubble：一个布尔属性，把它设置为true的时候，将停止事件进一步起泡到包容层次的元素；(e.cancelBubble = true; 相当于 e.stopPropagation();)</p>
+</li>
+<li><p>returnValue：一个布尔属性，设置为false的时候可以组织浏览器执行默认的事件动作；(e.returnValue = false; 相当于 e.preventDefault();)</p>
+</li>
+<li><p>attachEvent(),detachEvent()/addEventListener(),removeEventListener：为制定 DOM对象事件类型注册多个事件处理函数的方法，它们有两个参数，第一个是事件类型，第二个是事件处理函数。在<br>attachEvent()事件执行的时候，this关键字指向的是window对象，而不是发生事件的那个元素；</p>
+</li>
+<li><p>screenX、screenY：鼠标指针相对于显示器左上角的位置，如果你想打开新的窗口，这两个属性很重要；</p>
+</li>
+</ol>
 
       
 
@@ -290,7 +318,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托及event对象详解/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -324,7 +352,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JS中DOM操作、事件绑定、监听、委托详解" data-title="JS中DOM操作、事件绑定、监听、委托详解" data-url="http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/"></div>
+	<div class="ds-thread" data-thread-key="JS中DOM操作、事件绑定、监听、委托及event对象详解" data-title="JS中DOM操作、事件绑定、监听、委托及event对象详解" data-url="http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托及event对象详解/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -453,18 +481,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">animate.css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">css3动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MarkDown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
              
@@ -474,6 +490,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MarkDown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">animate.css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">css3动画</a>
               </li>
              
               <li class="article-tag-list-item">
