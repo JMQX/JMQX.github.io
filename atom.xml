@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-06T13:02:06.559Z</updated>
+  <updated>2017-05-06T13:05:39.741Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/05/06/JS%E4%B8%ADDOM%E6%93%8D%E4%BD%9C%E3%80%81%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E3%80%81%E7%9B%91%E5%90%AC%E3%80%81%E5%A7%94%E6%89%98%E5%8F%8Aevent%E5%AF%B9%E8%B1%A1%E8%AF%A6%E8%A7%A3/"/>
     <id>http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托及event对象详解/</id>
     <published>2017-05-06T10:57:47.000Z</published>
-    <updated>2017-05-06T13:02:06.559Z</updated>
+    <updated>2017-05-06T13:05:39.741Z</updated>
     
     <content type="html"><![CDATA[<p>在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。</p>
 <h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="1-访问节点"><a href="#1-访问节点" class="headerlink" title="1.访问节点"></a>1.访问节点</h3><p>document.getElementById(id);<br>返回对拥有指定id的第一个对象进行访问</p>
@@ -65,12 +65,8 @@
 <p>event：（必需）事件类型。需加“on“，例如：onclick。</p>
 <p>function：（必需）指定要事件触发时执行的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.getElementById(&apos;btn&apos;).addEventListener(&quot;click&quot;, btnClick, false);</div><div class="line">function btnClick()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <h3 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h3><p>element.removeEventListener(event,function);<br>IE下：element.detachEvent(event,function);</p>
-<h3 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h3><pre><code>但值得注意的是JavaScript中事件模型分为两种————冒泡模型和捕获模型，也称事件冒泡和事件捕获。
-（1）事件冒泡：指事件按照从最特定的事件目标到最不特定的事件目标的顺序触发。通俗一点，在html文档中，DOM节点成呈树状结构，从最特点的事件目标即直接发生的DOM节点到最不特点发生的事件目标即html的document对象传递，这个过程称为事件冒泡。
-（2）事件捕获：事件从最不精确的document对象开始触发，到最特定最精确的事件目标。简而言之，就是和事件冒泡完全相反的两个动作。
-（3）DOM事件流：同时支持两种事件模型：捕获型事件和冒泡型事件，但是，捕获型事件先发生。两种事件流会触及DOM中的所有对象，从document对象开始，也在document对象结束。
-  DOM事件模型最独特的性质是，文本节点也触发事件(在IE中不会)。
-</code></pre><h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托就是利用冒泡的原理，把事件加给父元素或祖先元素上，触发执行效果。事件委托的有点，可以避免多个同类型节点添加同一事件处理，减少内存占用，提高事件的处理速度，优化网页性能。</p>
+<h3 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h3><p>但值得注意的是JavaScript中事件模型分为两种————冒泡模型和捕获模型，也称事件冒泡和事件捕获。<br>（1）事件冒泡：指事件按照从最特定的事件目标到最不特定的事件目标的顺序触发。通俗一点，在html文档中，DOM节点成呈树状结构，从最特点的事件目标即直接发生的DOM节点到最不特点发生的事件目标即html的document对象传递，这个过程称为事件冒泡。<br>（2）事件捕获：事件从最不精确的document对象开始触发，到最特定最精确的事件目标。简而言之，就是和事件冒泡完全相反的两个动作。<br>（3）DOM事件流：同时支持两种事件模型：捕获型事件和冒泡型事件，但是，捕获型事件先发生。两种事件流会触及DOM中的所有对象，从document对象开始，也在document对象结束。<br>DOM事件模型最独特的性质是，文本节点也触发事件(在IE中不会)。</p>
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托就是利用冒泡的原理，把事件加给父元素或祖先元素上，触发执行效果。事件委托的有点，可以避免多个同类型节点添加同一事件处理，减少内存占用，提高事件的处理速度，优化网页性能。</p>
 <p>比如给一个里边的每一项添加事件：</p>
 <p>传统写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var items=document.getElementsByTagName(&apos;li&apos;);</div><div class="line">    for(var i=0;i&lt;items.length;i++)&#123;</div><div class="line">        items[i].onclick=function()&#123;</div><div class="line">            this.style.color=&apos;red&apos;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>事件委托写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var group=document.getElementById(&apos;group&apos;);</div><div class="line">    group.onclick=function(event)&#123;</div><div class="line">        var target=event.target;</div><div class="line">        target.style.color=&apos;red&apos;;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
@@ -256,11 +252,11 @@
     </summary>
     
     
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
       <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
