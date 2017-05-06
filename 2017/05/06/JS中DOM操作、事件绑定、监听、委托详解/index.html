@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>css3动画库animate.css的使用 | 江民钦的博客</title>
+  <title>JS中DOM操作、事件绑定、监听、委托详解 | 江民钦的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css3动画库animate.css的使用简介 animate.css 是一个来自国外的 CSS3 动画库，它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。虽然借助 animate.css 能够很方便、快速的制作 C">
-<meta name="keywords" content="animate.css,css3动画">
+  <meta name="description" content="在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css3动画库animate.css的使用">
-<meta property="og:url" content="http://yoursite.com/2017/04/23/css3动画库animate-css的使用/index.html">
+<meta property="og:title" content="JS中DOM操作、事件绑定、监听、委托详解">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/index.html">
 <meta property="og:site_name" content="江民钦的博客">
-<meta property="og:description" content="css3动画库animate.css的使用简介 animate.css 是一个来自国外的 CSS3 动画库，它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。虽然借助 animate.css 能够很方便、快速的制作 C">
-<meta property="og:updated_time" content="2017-04-23T14:48:21.885Z">
+<meta property="og:description" content="在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。">
+<meta property="og:updated_time" content="2017-05-06T12:23:47.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css3动画库animate.css的使用">
-<meta name="twitter:description" content="css3动画库animate.css的使用简介 animate.css 是一个来自国外的 CSS3 动画库，它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。虽然借助 animate.css 能够很方便、快速的制作 C">
+<meta name="twitter:title" content="JS中DOM操作、事件绑定、监听、委托详解">
+<meta name="twitter:description" content="在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。">
   
     <link rel="alternative" href="/atom.xml" title="江民钦的博客" type="application/atom+xml">
   
@@ -148,45 +148,137 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-css3动画库animate-css的使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS中DOM操作、事件绑定、监听、委托详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      css3动画库animate.css的使用
+      JS中DOM操作、事件绑定、监听、委托详解
     </h1>
   
 
         
-        <a href="/2017/04/23/css3动画库animate-css的使用/" class="archive-article-date">
-  	<time datetime="2017-04-23T14:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
+        <a href="/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/" class="archive-article-date">
+  	<time datetime="2017-05-06T10:57:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="css3动画库animate-css的使用"><a href="#css3动画库animate-css的使用" class="headerlink" title="css3动画库animate.css的使用"></a>css3动画库animate.css的使用</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>animate.css 是一个来自国外的 CSS3 动画库，它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。<br>虽然借助 animate.css 能够很方便、快速的制作 CSS3 动画效果，但还是建议看看 animate.css 的代码，也许你能从中学到一些东西。</p>
-</blockquote>
-<h2 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h2><blockquote>
-<p>浏览器兼容：当然是只兼容支持 CSS3 animate 属性的浏览器，他们分别是：IE10+、Firefox、Chrome、Opera、Safari。</p>
-</blockquote>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="http://daneden.github.io/animate.css/" target="_blank" rel="external">http://daneden.github.io/animate.css/</a><br><a id="more"></a></p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>1.引入文件及使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;animate.min.css&quot;&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;animated bounce&quot; id=&quot;dowebok&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h2 id="搭配jquery"><a href="#搭配jquery" class="headerlink" title="搭配jquery"></a>搭配jquery</h2><blockquote>
-<p>给元素加上 class 后，刷新页面，就能看到动画效果了。animated 类似于全局变量，它定义了动画的持续时间；bounce 是动画具体的动画效果的名称，你可以选择任意的效果。</p>
-</blockquote>
-<p>如果动画是无限播放的，可以添加 class infinite。</p>
-<p>你也可以通过 JavaScript 或 jQuery 给元素添加这些 class，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">    $(&apos;#dowebok&apos;).addClass(&apos;animated bounce&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>有些动画效果最后会让元素不可见，比如淡出、向左滑动等等，可能你又需要将 class 删除，比如：（刚看到有些人直接复制了下边的代码没显示，原因是没添加触发事件，可以加一个hover/点击事件，把下面的代码复制进去，或者可以直接写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">    $(&apos;#dowebok&apos;).addClass(&apos;animated bounce&apos;);</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        $(&apos;#dowebok&apos;).removeClass(&apos;bounce&apos;);</div><div class="line">    &#125;, 1000);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>animate.css 的默认设置也许有些时候并不是我们想要的，所以你可以重新设置，比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#dowebok &#123;</div><div class="line">    animate-duration: 2s;    //动画持续时间</div><div class="line">    animate-delay: 1s;    //动画延迟时间</div><div class="line">    animate-iteration-count: 2;    //动画执行次数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <pre><code>在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。
+</code></pre><a id="more"></a>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="1-访问节点"><a href="#1-访问节点" class="headerlink" title="1.访问节点"></a>1.访问节点</h3><pre><code>document.getElementById(id);
+返回对拥有指定id的第一个对象进行访问
+
+document.getElementsByName(name);
+返回带有指定名称的节点集合
+注意:Elements
+
+document.getElementsByTagName(tagname);
+返回带有指定标签名的对象集合
+注意：Elements
+
+document.getElementsByClassName(classname);
+返回带有指定class名称的对象集合
+</code></pre><h3 id="2-生成节点"><a href="#2-生成节点" class="headerlink" title="2.生成节点"></a>2.生成节点</h3><pre><code>document.createElement(eName);
+创建一个节点
+
+document.createAttribute(attrName);
+对某个节点创建属性
+
+document.createTextNode(text);
+创建文本节点
+
+3.添加节点
+document.insertBefore(newNode,referenceChild);
+在某个节点前插入节点
+
+parentNode.appendChild(newNode);
+给某个节点添加子节点
+</code></pre><h3 id="4-复制节点"><a href="#4-复制节点" class="headerlink" title="4.复制节点"></a>4.复制节点</h3><pre><code>cloneNode(true | false);
+复制某个节点
+参数：是否复制原节点的所有属性
+</code></pre><h3 id="5-删除节点"><a href="#5-删除节点" class="headerlink" title="5.删除节点"></a>5.删除节点</h3><pre><code>parentNode.removeChild(node)
+删除某个节点的子节点
+node是要删除的节点
+</code></pre><h3 id="6-修改文本节点"><a href="#6-修改文本节点" class="headerlink" title="6.修改文本节点"></a>6.修改文本节点</h3><pre><code>appendData(data);
+将data加到文本节点后面
+
+deleteData(start,length);
+将从start处删除length个字符
+
+insertData(start,data)
+在start处插入字符,start的开始值是0;
+
+replaceData(start,length,data)
+在start处用data替换length个字符
+
+splitData(offset)
+在offset处分割文本节点
+
+substringData(start,length)
+从start处提取length个字符
+</code></pre><h3 id="7-属性操作"><a href="#7-属性操作" class="headerlink" title="7.属性操作"></a>7.属性操作</h3><pre><code>getAttribute(name)
+通过属性名称获取某个节点属性的值
+
+setAttribute(name,value);
+修改某个节点属性的值
+
+removeAttribute(name)
+删除某个属性
+</code></pre><h3 id="8-查找节点"><a href="#8-查找节点" class="headerlink" title="8.查找节点"></a>8.查找节点</h3><pre><code>parentObj.firstChild
+如果节点为已知节点的第一个子节点就可以使用这个方法。此方法可以递归进行使用
+parentObj.firstChild.firstChild.....
+
+parentObj.lastChild
+获得一个节点的最后一个节点，与firstChild一样也可以进行递归使用
+parentObj.lastChild.lastChild.....
+
+parentObj.childNodes
+获得节点的所有子节点，然后通过循环和索引找到目标节点
+</code></pre><h3 id="9-获取相邻的节点"><a href="#9-获取相邻的节点" class="headerlink" title="9.获取相邻的节点"></a>9.获取相邻的节点</h3><pre><code>neborNode.previousSibling :获取已知节点的相邻的上一个节点
+nerbourNode.nextSlbling: 获取已知节点的下一个节点
+</code></pre><h3 id="10-获取父节点"><a href="#10-获取父节点" class="headerlink" title="10.获取父节点"></a>10.获取父节点</h3><pre><code>childNode.parentNode:得到已知节点的父节点
+</code></pre><h3 id="11替换节点"><a href="#11替换节点" class="headerlink" title="11替换节点"></a>11替换节点</h3><pre><code>方法replace(new,old)
+</code></pre><h3 id="JS-innerHTML和innerText区别"><a href="#JS-innerHTML和innerText区别" class="headerlink" title="JS innerHTML和innerText区别"></a>JS innerHTML和innerText区别</h3><pre><code>1、innerHTML:
+
+　　也就是从对象的起始位置到终止位置的全部内容,包括Html标签。
+2、innerText:
+
+　　从起始位置到终止位置的内容, 但它去除Html标签 
+</code></pre><h2 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h2><pre><code>总所周知，在JavaScript中事件采用绑定监听这种形式。我们可以在DOM元素上绑定onclick、onmouseover、onmouseout、onmousedown、onmouseup、ondblclick、onkeydown、onkeypress、onkeyup等
+</code></pre><h3 id="在JavaScript代码中绑定事件"><a href="#在JavaScript代码中绑定事件" class="headerlink" title="在JavaScript代码中绑定事件"></a>在JavaScript代码中绑定事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.getElementById(&quot;btn&quot;).onclick = function()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="在html中添加事件函数"><a href="#在html中添加事件函数" class="headerlink" title="在html中添加事件函数"></a>在html中添加事件函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot; onclick=&quot;btnClick()&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function btnClick()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="绑定事件监听器"><a href="#绑定事件监听器" class="headerlink" title="绑定事件监听器"></a>绑定事件监听器</h3><p>W3C规范</p>
+<p>语法：</p>
+<p>element.addEventListener(event, function, useCapture)</p>
+<p>event : （必需）事件名，支持所有 DOM事件 。</p>
+<p>function：（必需）指定要事件触发时执行的函数。</p>
+<p>useCapture：（可选）指定事件是否在捕获或冒泡阶段执行。true，捕获。false，冒泡。默认false。<br>注：IE8以下不支持。</p>
+<p>IE标准</p>
+<p>语法：</p>
+<p>element.attachEvent(event, function)</p>
+<p>event：（必需）事件类型。需加“on“，例如：onclick。</p>
+<p>function：（必需）指定要事件触发时执行的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.getElementById(&apos;btn&apos;).addEventListener(&quot;click&quot;, btnClick, false);</div><div class="line">function btnClick()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h3><p>element.removeEventListener(event,function);</p>
+<h3 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h3><pre><code>但值得注意的是JavaScript中事件模型分为两种————冒泡模型和捕获模型，也称事件冒泡和事件捕获。
+（1）事件冒泡：指事件按照从最特定的事件目标到最不特定的事件目标的顺序触发。通俗一点，在html文档中，DOM节点成呈树状结构，从最特点的事件目标即直接发生的DOM节点到最不特点发生的事件目标即html的document对象传递，这个过程称为事件冒泡。
+（2）事件捕获：事件从最不精确的document对象开始触发，到最特定最精确的事件目标。简而言之，就是和事件冒泡完全相反的两个动作。
+（3）DOM事件流：同时支持两种事件模型：捕获型事件和冒泡型事件，但是，捕获型事件先发生。两种事件流会触及DOM中的所有对象，从document对象开始，也在document对象结束。
+  DOM事件模型最独特的性质是，文本节点也触发事件(在IE中不会)。
+</code></pre><h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><pre><code>事件委托就是利用冒泡的原理，把事件加给父元素或祖先元素上，触发执行效果。事件委托的有点，可以避免多个同类型节点添加同一事件处理，减少内存占用，提高事件的处理速度，优化网页性能。
+
+比如给一个里边的每一项添加事件：
+
+传统写法：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var items=document.getElementsByTagName(&apos;li&apos;);</div><div class="line">    for(var i=0;i&lt;items.length;i++)&#123;</div><div class="line">        items[i].onclick=function()&#123;</div><div class="line">            this.style.color=&apos;red&apos;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<pre><code>事件委托写法：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var group=document.getElementById(&apos;group&apos;);</div><div class="line">    group.onclick=function(event)&#123;</div><div class="line">        var target=event.target;</div><div class="line">        target.style.color=&apos;red&apos;;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<pre><code>当然如果不想事件冒泡可以使用event.stopPropagation()函数阻止事件冒泡。还有阻止事件的默认行为的方法有event.preventDefault()
+</code></pre>
       
 
       
@@ -199,11 +291,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">animate.css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">css3动画</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -259,7 +347,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/23/css3动画库animate-css的使用/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,20 +361,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/23/算法学习笔记-DP动态规划/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/04/算法学习笔记-妖怪与和尚过河问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          算法学习笔记-DP动态规划
+          算法学习笔记-妖怪与和尚过河问题
         
       </div>
     </a>
   
-  
-    <a href="/2017/05/04/算法学习笔记-妖怪与和尚过河问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">算法学习笔记-妖怪与和尚过河问题</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -298,7 +381,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="css3动画库animate-css的使用" data-title="css3动画库animate.css的使用" data-url="http://yoursite.com/2017/04/23/css3动画库animate-css的使用/"></div>
+	<div class="ds-thread" data-thread-key="JS中DOM操作、事件绑定、监听、委托详解" data-title="JS中DOM操作、事件绑定、监听、委托详解" data-url="http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
