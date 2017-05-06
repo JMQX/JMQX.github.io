@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-06T12:23:47.823Z</updated>
+  <updated>2017-05-06T12:32:46.425Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,91 +20,38 @@
     <link href="http://yoursite.com/2017/05/06/JS%E4%B8%ADDOM%E6%93%8D%E4%BD%9C%E3%80%81%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E3%80%81%E7%9B%91%E5%90%AC%E3%80%81%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3/"/>
     <id>http://yoursite.com/2017/05/06/JS中DOM操作、事件绑定、监听、委托详解/</id>
     <published>2017-05-06T10:57:47.000Z</published>
-    <updated>2017-05-06T12:23:47.823Z</updated>
+    <updated>2017-05-06T12:32:46.425Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。
-</code></pre><a id="more"></a>
-<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="1-访问节点"><a href="#1-访问节点" class="headerlink" title="1.访问节点"></a>1.访问节点</h3><pre><code>document.getElementById(id);
-返回对拥有指定id的第一个对象进行访问
-
-document.getElementsByName(name);
-返回带有指定名称的节点集合
-注意:Elements
-
-document.getElementsByTagName(tagname);
-返回带有指定标签名的对象集合
-注意：Elements
-
-document.getElementsByClassName(classname);
-返回带有指定class名称的对象集合
-</code></pre><h3 id="2-生成节点"><a href="#2-生成节点" class="headerlink" title="2.生成节点"></a>2.生成节点</h3><pre><code>document.createElement(eName);
-创建一个节点
-
-document.createAttribute(attrName);
-对某个节点创建属性
-
-document.createTextNode(text);
-创建文本节点
-
-3.添加节点
-document.insertBefore(newNode,referenceChild);
-在某个节点前插入节点
-
-parentNode.appendChild(newNode);
-给某个节点添加子节点
-</code></pre><h3 id="4-复制节点"><a href="#4-复制节点" class="headerlink" title="4.复制节点"></a>4.复制节点</h3><pre><code>cloneNode(true | false);
-复制某个节点
-参数：是否复制原节点的所有属性
-</code></pre><h3 id="5-删除节点"><a href="#5-删除节点" class="headerlink" title="5.删除节点"></a>5.删除节点</h3><pre><code>parentNode.removeChild(node)
-删除某个节点的子节点
-node是要删除的节点
-</code></pre><h3 id="6-修改文本节点"><a href="#6-修改文本节点" class="headerlink" title="6.修改文本节点"></a>6.修改文本节点</h3><pre><code>appendData(data);
-将data加到文本节点后面
-
-deleteData(start,length);
-将从start处删除length个字符
-
-insertData(start,data)
-在start处插入字符,start的开始值是0;
-
-replaceData(start,length,data)
-在start处用data替换length个字符
-
-splitData(offset)
-在offset处分割文本节点
-
-substringData(start,length)
-从start处提取length个字符
-</code></pre><h3 id="7-属性操作"><a href="#7-属性操作" class="headerlink" title="7.属性操作"></a>7.属性操作</h3><pre><code>getAttribute(name)
-通过属性名称获取某个节点属性的值
-
-setAttribute(name,value);
-修改某个节点属性的值
-
-removeAttribute(name)
-删除某个属性
-</code></pre><h3 id="8-查找节点"><a href="#8-查找节点" class="headerlink" title="8.查找节点"></a>8.查找节点</h3><pre><code>parentObj.firstChild
-如果节点为已知节点的第一个子节点就可以使用这个方法。此方法可以递归进行使用
-parentObj.firstChild.firstChild.....
-
-parentObj.lastChild
-获得一个节点的最后一个节点，与firstChild一样也可以进行递归使用
-parentObj.lastChild.lastChild.....
-
-parentObj.childNodes
-获得节点的所有子节点，然后通过循环和索引找到目标节点
-</code></pre><h3 id="9-获取相邻的节点"><a href="#9-获取相邻的节点" class="headerlink" title="9.获取相邻的节点"></a>9.获取相邻的节点</h3><pre><code>neborNode.previousSibling :获取已知节点的相邻的上一个节点
-nerbourNode.nextSlbling: 获取已知节点的下一个节点
-</code></pre><h3 id="10-获取父节点"><a href="#10-获取父节点" class="headerlink" title="10.获取父节点"></a>10.获取父节点</h3><pre><code>childNode.parentNode:得到已知节点的父节点
-</code></pre><h3 id="11替换节点"><a href="#11替换节点" class="headerlink" title="11替换节点"></a>11替换节点</h3><pre><code>方法replace(new,old)
-</code></pre><h3 id="JS-innerHTML和innerText区别"><a href="#JS-innerHTML和innerText区别" class="headerlink" title="JS innerHTML和innerText区别"></a>JS innerHTML和innerText区别</h3><pre><code>1、innerHTML:
-
-　　也就是从对象的起始位置到终止位置的全部内容,包括Html标签。
-2、innerText:
-
-　　从起始位置到终止位置的内容, 但它去除Html标签 
-</code></pre><h2 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h2><pre><code>总所周知，在JavaScript中事件采用绑定监听这种形式。我们可以在DOM元素上绑定onclick、onmouseover、onmouseout、onmousedown、onmouseup、ondblclick、onkeydown、onkeypress、onkeyup等
-</code></pre><h3 id="在JavaScript代码中绑定事件"><a href="#在JavaScript代码中绑定事件" class="headerlink" title="在JavaScript代码中绑定事件"></a>在JavaScript代码中绑定事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.getElementById(&quot;btn&quot;).onclick = function()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<p>在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。</p>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="1-访问节点"><a href="#1-访问节点" class="headerlink" title="1.访问节点"></a>1.访问节点</h3><p>document.getElementById(id);<br>返回对拥有指定id的第一个对象进行访问</p>
+<p>document.getElementsByName(name);<br><a id="more"></a><br>返回带有指定名称的节点集合<br>注意:Elements</p>
+<p>document.getElementsByTagName(tagname);<br>返回带有指定标签名的对象集合<br>注意：Elements</p>
+<p>document.getElementsByClassName(classname);<br>返回带有指定class名称的对象集合</p>
+<h3 id="2-生成节点"><a href="#2-生成节点" class="headerlink" title="2.生成节点"></a>2.生成节点</h3><p>document.createElement(eName);<br>创建一个节点</p>
+<p>document.createAttribute(attrName);<br>对某个节点创建属性</p>
+<p>document.createTextNode(text);<br>创建文本节点</p>
+<p>3.添加节点<br>document.insertBefore(newNode,referenceChild);<br>在某个节点前插入节点</p>
+<p>parentNode.appendChild(newNode);<br>给某个节点添加子节点</p>
+<h3 id="4-复制节点"><a href="#4-复制节点" class="headerlink" title="4.复制节点"></a>4.复制节点</h3><p>cloneNode(true | false);<br>复制某个节点<br>参数：是否复制原节点的所有属性</p>
+<h3 id="5-删除节点"><a href="#5-删除节点" class="headerlink" title="5.删除节点"></a>5.删除节点</h3><p>parentNode.removeChild(node)<br>删除某个节点的子节点<br>node是要删除的节点</p>
+<h3 id="6-修改文本节点"><a href="#6-修改文本节点" class="headerlink" title="6.修改文本节点"></a>6.修改文本节点</h3><p>appendData(data);<br>将data加到文本节点后面</p>
+<p>deleteData(start,length);<br>将从start处删除length个字符</p>
+<p>insertData(start,data)<br>在start处插入字符,start的开始值是0;</p>
+<p>replaceData(start,length,data)<br>在start处用data替换length个字符</p>
+<p>splitData(offset)<br>在offset处分割文本节点</p>
+<p>substringData(start,length)<br>从start处提取length个字符</p>
+<h3 id="7-属性操作"><a href="#7-属性操作" class="headerlink" title="7.属性操作"></a>7.属性操作</h3><p>getAttribute(name)<br>通过属性名称获取某个节点属性的值</p>
+<p>setAttribute(name,value);<br>修改某个节点属性的值</p>
+<p>removeAttribute(name)<br>删除某个属性</p>
+<h3 id="8-查找节点"><a href="#8-查找节点" class="headerlink" title="8.查找节点"></a>8.查找节点</h3><p>parentObj.firstChild<br>如果节点为已知节点的第一个子节点就可以使用这个方法。此方法可以递归进行使用<br>parentObj.firstChild.firstChild…..</p>
+<p>parentObj.lastChild<br>获得一个节点的最后一个节点，与firstChild一样也可以进行递归使用<br>parentObj.lastChild.lastChild…..</p>
+<p>parentObj.childNodes<br>获得节点的所有子节点，然后通过循环和索引找到目标节点</p>
+<h3 id="9-获取相邻的节点"><a href="#9-获取相邻的节点" class="headerlink" title="9.获取相邻的节点"></a>9.获取相邻的节点</h3><p>neborNode.previousSibling :获取已知节点的相邻的上一个节点<br>nerbourNode.nextSlbling: 获取已知节点的下一个节点</p>
+<h3 id="10-获取父节点"><a href="#10-获取父节点" class="headerlink" title="10.获取父节点"></a>10.获取父节点</h3><p>childNode.parentNode:得到已知节点的父节点</p>
+<h3 id="11替换节点"><a href="#11替换节点" class="headerlink" title="11替换节点"></a>11替换节点</h3><p>方法replace(new,old)</p>
+<h3 id="JS-innerHTML和innerText区别"><a href="#JS-innerHTML和innerText区别" class="headerlink" title="JS innerHTML和innerText区别"></a>JS innerHTML和innerText区别</h3><p>1、innerHTML:<br>　　也就是从对象的起始位置到终止位置的全部内容,包括Html标签。<br>2、innerText:<br>  　从起始位置到终止位置的内容, 但它去除Html标签 </p>
+<h2 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h2><p>总所周知，在JavaScript中事件采用绑定监听这种形式。我们可以在DOM元素上绑定onclick、onmouseover、onmouseout、onmousedown、onmouseup、ondblclick、onkeydown、onkeypress、onkeyup等</p>
+<h3 id="在JavaScript代码中绑定事件"><a href="#在JavaScript代码中绑定事件" class="headerlink" title="在JavaScript代码中绑定事件"></a>在JavaScript代码中绑定事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">document.getElementById(&quot;btn&quot;).onclick = function()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <h3 id="在html中添加事件函数"><a href="#在html中添加事件函数" class="headerlink" title="在html中添加事件函数"></a>在html中添加事件函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; id=&quot;btn&quot; onclick=&quot;btnClick()&quot;&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function btnClick()&#123;</div><div class="line"> alert(&quot;hello world!&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <h3 id="绑定事件监听器"><a href="#绑定事件监听器" class="headerlink" title="绑定事件监听器"></a>绑定事件监听器</h3><p>W3C规范</p>
 <p>语法：</p>
@@ -123,21 +70,18 @@ nerbourNode.nextSlbling: 获取已知节点的下一个节点
 （2）事件捕获：事件从最不精确的document对象开始触发，到最特定最精确的事件目标。简而言之，就是和事件冒泡完全相反的两个动作。
 （3）DOM事件流：同时支持两种事件模型：捕获型事件和冒泡型事件，但是，捕获型事件先发生。两种事件流会触及DOM中的所有对象，从document对象开始，也在document对象结束。
   DOM事件模型最独特的性质是，文本节点也触发事件(在IE中不会)。
-</code></pre><h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><pre><code>事件委托就是利用冒泡的原理，把事件加给父元素或祖先元素上，触发执行效果。事件委托的有点，可以避免多个同类型节点添加同一事件处理，减少内存占用，提高事件的处理速度，优化网页性能。
-
-比如给一个里边的每一项添加事件：
-
-传统写法：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var items=document.getElementsByTagName(&apos;li&apos;);</div><div class="line">    for(var i=0;i&lt;items.length;i++)&#123;</div><div class="line">        items[i].onclick=function()&#123;</div><div class="line">            this.style.color=&apos;red&apos;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<pre><code>事件委托写法：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var group=document.getElementById(&apos;group&apos;);</div><div class="line">    group.onclick=function(event)&#123;</div><div class="line">        var target=event.target;</div><div class="line">        target.style.color=&apos;red&apos;;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<pre><code>当然如果不想事件冒泡可以使用event.stopPropagation()函数阻止事件冒泡。还有阻止事件的默认行为的方法有event.preventDefault()
-</code></pre>]]></content>
+</code></pre><h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托就是利用冒泡的原理，把事件加给父元素或祖先元素上，触发执行效果。事件委托的有点，可以避免多个同类型节点添加同一事件处理，减少内存占用，提高事件的处理速度，优化网页性能。</p>
+<p>比如给一个里边的每一项添加事件：</p>
+<p>传统写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var items=document.getElementsByTagName(&apos;li&apos;);</div><div class="line">    for(var i=0;i&lt;items.length;i++)&#123;</div><div class="line">        items[i].onclick=function()&#123;</div><div class="line">            this.style.color=&apos;red&apos;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>事件委托写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=&quot;group&quot;&gt;</div><div class="line">    &lt;li&gt;item1&lt;/li&gt;</div><div class="line">    &lt;li&gt;item2&lt;/li&gt;</div><div class="line">    &lt;li&gt;item3&lt;/li&gt;</div><div class="line">    &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var group=document.getElementById(&apos;group&apos;);</div><div class="line">    group.onclick=function(event)&#123;</div><div class="line">        var target=event.target;</div><div class="line">        target.style.color=&apos;red&apos;;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>当然函数阻止事件冒泡可以使用event.stopPropagation().<br>还有阻止事件的默认行为的方法有event.preventDefault()</p>
+]]></content>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;在JavaScript中最不得不提起的就是对DOM节点的操作以及它的事件机制，对于其中的细节之处，往往是一个前端开发者必须要掌握的。&lt;/p&gt;
+&lt;h2 id=&quot;DOM操作&quot;&gt;&lt;a href=&quot;#DOM操作&quot; class=&quot;headerlink&quot; title=&quot;DOM操作&quot;&gt;&lt;/a&gt;DOM操作&lt;/h2&gt;&lt;h3 id=&quot;1-访问节点&quot;&gt;&lt;a href=&quot;#1-访问节点&quot; class=&quot;headerlink&quot; title=&quot;1.访问节点&quot;&gt;&lt;/a&gt;1.访问节点&lt;/h3&gt;&lt;p&gt;document.getElementById(id);&lt;br&gt;返回对拥有指定id的第一个对象进行访问&lt;/p&gt;
+&lt;p&gt;document.getElementsByName(name);&lt;br&gt;
     
     </summary>
     
