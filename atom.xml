@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-06T13:05:39.741Z</updated>
+  <updated>2017-07-13T14:20:59.487Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java IO:RandomAccessFile</title>
+    <link href="http://yoursite.com/2017/07/13/Java-IO-RandomAccessFile/"/>
+    <id>http://yoursite.com/2017/07/13/Java-IO-RandomAccessFile/</id>
+    <published>2017-07-13T13:50:52.000Z</published>
+    <updated>2017-07-13T14:20:59.487Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>在Java中RandomAccessFile可以对文件进行随机的访问操作，包括读和写，具有两个访问模式，一个是只读(r)，一个是读写(rw),需要在创建RandomAccessFile对象时传入参数进行设置，第一个参数是文件路径，第二个参数为访问模式。该类读写是基于指针的操作。
+</code></pre><a id="more"></a>
+<h4 id="创建一个RandomAccessFile对象进行读写"><a href="#创建一个RandomAccessFile对象进行读写" class="headerlink" title="创建一个RandomAccessFile对象进行读写"></a>创建一个RandomAccessFile对象进行读写</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RandomAccessFile file=new RandomAccessFile(&quot;D:\\file.txt&quot;,&quot;rw&quot;);</div><div class="line">int data=file.read();</div><div class="line">file.write(&quot;hello world&quot;.getBytes());</div><div class="line">file.close();</div></pre></td></tr></table></figure>
+<pre><code>read()方法会返回当前指针所指向位置的字节内容，read()在读取完一个字节后，会自动把指针移向下一个位置。同样,write()方法在调用完之后也会自动移动指针。
+</code></pre><p>####在RandomAccessFile中进行来回读写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RandomAccessFile file=new RandomAccessFile(&quot;D:\\file.txt&quot;,&quot;rw&quot;);</div><div class="line">file.seek(200);</div><div class="line">long pointer=file.getFilePointer();</div><div class="line">file.close();</div></pre></td></tr></table></figure></p>
+<pre><code>通过seek()方法可以设置指针位置，getFilePointer()方法可以返回当前指针所在位置。
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;在Java中RandomAccessFile可以对文件进行随机的访问操作，包括读和写，具有两个访问模式，一个是只读(r)，一个是读写(rw),需要在创建RandomAccessFile对象时传入参数进行设置，第一个参数是文件路径，第二个参数为访问模式。该类读写是基于指针的操作。
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>JS中DOM操作、事件绑定、监听、委托及event对象详解</title>
