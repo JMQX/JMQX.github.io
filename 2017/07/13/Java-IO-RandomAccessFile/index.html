@@ -3,12 +3,4 @@
 <p>  read()方法会返回当前指针所指向位置的字节内容，read()在读取完一个字节后，会自动把指针移向下一个位置。同样,write()方法在调用完之后也会自动移动指针。</p>
 <h3 id="在RandomAccessFile中进行来回读写"><a href="#在RandomAccessFile中进行来回读写" class="headerlink" title="在RandomAccessFile中进行来回读写"></a>在RandomAccessFile中进行来回读写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RandomAccessFile file=new RandomAccessFile(&quot;D:\\file.txt&quot;,&quot;rw&quot;);</div><div class="line">file.seek(200);</div><div class="line">long pointer=file.getFilePointer();</div><div class="line">file.close();</div></pre></td></tr></table></figure>
 <p>  通过seek()方法可以设置指针位置，getFilePointer()方法可以返回当前指针所在位置。</p>
-</div></article></div><div id="disqus_thread"></div></div><script>var disqus_shortname = 'angrypowman';
-var disqus_identifier = '2017/07/13/Java-IO-RandomAccessFile/';
-var disqus_title = 'Java IO:RandomAccessFile';
-var disqus_url = 'http://yoursite.com/2017/07/13/Java-IO-RandomAccessFile/';
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();</script><script id="dsq-count-scr" src="//angrypowman.disqus.com/count.js" async></script></main><footer class="footer-container"><div class="paginator"><a href="/2017/05/06/JS中DOM操作、事件绑定、监听、委托及event对象详解/" class="prev">上一篇</a></div><div class="copyright"><p>© 2017 <a href="http://yoursite.com">JiangMinQin</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/AngryPowman/hexo-theme-prontera" target="_blank">hexo-theme-prontera</a>.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"angrypowman",'auto');ga('send','pageview');</script></body></html>
+</div></article></div></div></main><footer class="footer-container"><div class="paginator"><a href="/2017/05/06/JS中DOM操作、事件绑定、监听、委托及event对象详解/" class="prev">PREV</a></div><div class="copyright"><p>© 2017 <a href="http://yoursite.com">JiangMinQin</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/AngryPowman/hexo-theme-prontera" target="_blank">hexo-theme-prontera</a>.</p></div></footer></body></html>
