@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css3动画库animate.css的使用 | 江民钦的博客</title>
+
+  
+  <meta name="author" content="JiangMinQin">
+  
+
+  
+  <meta name="description" content="css3动画库animate.css的使用简介
+animate.css 是一个来自国外的 CSS3 动画库，它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。虽然借助 animate.css 能够很方便、快速的制作 CSS3 动画效果，但还是建议看看 animate.css 的代码，也许你能从中学到一些东西。
+
+兼容
+浏览器兼容：当然是只兼容支持 CSS3 animate 属性的浏览器，他们分别是：IE10+、Firefox、Chrome、Opera、Safari。
+
+下载http://daneden.github.io/animate.css/">
+  
+
+  
+  
+  <meta name="keywords" content="animate.css,css3动画">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="css3动画库animate.css的使用"/>
+
+  <meta property="og:site_name" content="江民钦的博客"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="江民钦的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">江民钦的博客</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>css3动画库animate.css的使用</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/04/23/css3动画库animate-css的使用/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-04-23T14:40:20.000Z">
+          2017-04-23
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="css3动画库animate-css的使用"><a href="#css3动画库animate-css的使用" class="headerlink" title="css3动画库animate.css的使用"></a>css3动画库animate.css的使用</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>animate.css 是一个来自国外的 CSS3 动画库，它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 60 多种动画效果，几乎包含了所有常见的动画效果。<br>虽然借助 animate.css 能够很方便、快速的制作 CSS3 动画效果，但还是建议看看 animate.css 的代码，也许你能从中学到一些东西。</p>
+</blockquote>
+<h2 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h2><blockquote>
+<p>浏览器兼容：当然是只兼容支持 CSS3 animate 属性的浏览器，他们分别是：IE10+、Firefox、Chrome、Opera、Safari。</p>
+</blockquote>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="http://daneden.github.io/animate.css/" target="_blank" rel="external">http://daneden.github.io/animate.css/</a><br><a id="more"></a></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>1.引入文件及使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;animate.min.css&quot;&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;animated bounce&quot; id=&quot;dowebok&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="搭配jquery"><a href="#搭配jquery" class="headerlink" title="搭配jquery"></a>搭配jquery</h2><blockquote>
+<p>给元素加上 class 后，刷新页面，就能看到动画效果了。animated 类似于全局变量，它定义了动画的持续时间；bounce 是动画具体的动画效果的名称，你可以选择任意的效果。</p>
+</blockquote>
+<p>如果动画是无限播放的，可以添加 class infinite。</p>
+<p>你也可以通过 JavaScript 或 jQuery 给元素添加这些 class，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">    $(&apos;#dowebok&apos;).addClass(&apos;animated bounce&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>有些动画效果最后会让元素不可见，比如淡出、向左滑动等等，可能你又需要将 class 删除，比如：（刚看到有些人直接复制了下边的代码没显示，原因是没添加触发事件，可以加一个hover/点击事件，把下面的代码复制进去，或者可以直接写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">    $(&apos;#dowebok&apos;).addClass(&apos;animated bounce&apos;);</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        $(&apos;#dowebok&apos;).removeClass(&apos;bounce&apos;);</div><div class="line">    &#125;, 1000);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>animate.css 的默认设置也许有些时候并不是我们想要的，所以你可以重新设置，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#dowebok &#123;</div><div class="line">    animate-duration: 2s;    //动画持续时间</div><div class="line">    animate-delay: 1s;    //动画延迟时间</div><div class="line">    animate-iteration-count: 2;    //动画执行次数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/animate-css/">animate.css</a><a href="/tags/css3动画/">css3动画</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 JiangMinQin
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
