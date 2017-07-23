@@ -44,7 +44,6 @@ nav,
 section,
 summary {
   display: block;
-  overflow-y:hidden; 
 }
 
 /**
